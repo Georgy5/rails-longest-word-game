@@ -4,3 +4,25 @@
     <li><%= letter.capitalize %></li>
   <% end %>
 </ul>
+
+<%= form_with url: "/score", method: :post do |form| %>
+  <%= form.label :play, "What is the longest word you can find?" %>
+  <%= form.text_field :play %>
+  <%= form.submit "Play" %>
+<% end %>
+
+<p>----------</p>
+
+<p>What is the longest word you can find?</p>
+<form action="/score" method="post">
+  <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+  <input type="text" name="guess">
+  <input type="submit" value="Play">
+</form>
+
+<p>----------</p>
+
+<form accept-charset="UTF-8" action="/" method="post">
+  <input name="authenticity_token" type="hidden" value="J7CBxfHalt49OSHp27hblqK20c9PgwJ108nDHX/8Cts=" />
+  Form contents
+</form>
