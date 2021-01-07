@@ -5,8 +5,10 @@
   <% end %>
 </ul>
 
+<!-- This form doesn't seem to work. TODO: Read up -->
 <%= form_with url: "/score", method: :post do |form| %>
-  <%= form.label :play, "What is the longest word you can find?" %>
+  <!--<%= form.label :play, "What is the longest word you can find?" %>-->
+  <%= form.label :play, "Don't use this one - just testing" %>
   <%= form.text_field :play %>
   <%= form.submit "Play" %>
 <% end %>
@@ -16,7 +18,7 @@
 <p>What is the longest word you can find?</p>
 <form action="/score" method="post">
   <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
-  <input type="text" name="guess">
+  <input type="text" name="word">
   <input type="submit" value="Play">
 </form>
 
