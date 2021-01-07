@@ -10,4 +10,11 @@ class GamesController < ApplicationController
   def score
     raise
   end
+
+  def parse_dictionary(word)
+    url = "https://wagon-dictionary.herokuapp.com/#{word}"
+    word_serialized = open(url).read
+    api_result = JSON.parse(word_serialized)
+    return api_result
+  end
 end
